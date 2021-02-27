@@ -1,4 +1,4 @@
-# Data Science Disease
+# Data Science disease - SVM 
 
 Using Data Analytics to Predict disease Using Support Vector Machine (SVM).
 
