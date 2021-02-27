@@ -1,6 +1,6 @@
-# Data Science disease - SVM 
+# Data Science Disease - SVM 
 
-Using Data Analytics to Predict disease Using Support Vector Machine (SVM).
+Data analysis to predict disease using Support Vector Machine (SVM).
 
 Prediction
 We can use a model to make predictions, or to estimate a dependent variable’s value given at least one independent variable’s value.
