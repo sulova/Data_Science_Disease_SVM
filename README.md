@@ -1,21 +1,16 @@
 # Data Science Disease - SVM 
 
-In this project, I will be talking about a Machine Learning Model called Support Vector Machine (SVM). It is a very powerful and versatile supervised Machine Learning model,meaning sample data should be labeled. lgorithm works perfectly for almost any supervised problem and it can be used for **classification** or **regression problems**.  
+In this project, I will be talking about a Machine Learning Model called Support Vector Machine (SVM). It is a very powerful and versatile supervised Machine Learning model, superivsed meaning sample data should be labeled. Algorithm works perfectly for almost any supervised problem and it can be used for **classification** or **regression problems**. There is a slight difference in the implementation of these algorithms, *Support Vector Classifier* and *Support Vector Regressor*.
 
 # Support Vector Machine (SVM)
 SVM is well suited for classification of complex but small or medium sized datasets. To generalize, the objective is to find a hyperplane that maximizes the separation of the data points to their potential classes in an n-dimensional space. The data points with the minimum distance to the hyperplane  are called Support Vectors.
 
-In the One-to-Rest approach, the classifier can use \pmb{m} SVMs. Each SVM would predict membership in one of the \pmb{m} classes.
-In the One-to-One approach, the classifier can use \pmb{\frac{m (m-1)}{2}} SVMs.
+**The One-to-Rest approach** - separate between every two classes. Each SVM would predict membership in one of the **m** classes. This means the separation takes into account only the points of the two classes in the current split. Thus, the red-blue line tries to maximize the separation only between blue and red points and It has nothing to do with green points.
 
-*Classify dataset from M classes data set*
+**The One-to-One approach** - separate between a class and all others at once, meaning the separation takes all points into account, dividing them into two groups; a group for the class points and a group for all other points. Thus, the green line tries to maximize the separation between green points and all other points at once.
+
+*Example of 3 classes classification*
 ![Image](https://github.com/sulova/Data_Science_Disease_SVM/blob/main/SVM.PNG)
-
-The method which is used for classification is called *Support Vector Classifier* and the method which is used for regression is called *Support Vector Regressor*.There is a slight difference in the implementation of these algorithms.
-
-*Support Vector Regressor*
-
-*Support Vector Classifier*
 
 
 **The advantages of SVM**
@@ -42,6 +37,5 @@ import seaborn as sns
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-
 df=pd.read_csv('/disease.data')
 ```
