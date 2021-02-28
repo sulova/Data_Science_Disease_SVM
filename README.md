@@ -13,6 +13,7 @@ SVM is well suited for classification of complex but small or medium sized datas
 
 *Example of 3 classes classification*
 ![Image](https://github.com/sulova/Data_Science_Disease_SVM/blob/main/SVM.PNG=250x250)
+![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png | width=100)
 
 
 **The advantages of SVM**
