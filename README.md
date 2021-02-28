@@ -1,4 +1,6 @@
 # Data Science - Support Vector Machine (SVM) 
+**SVM Multiclass Classification in Python**
+
 
 In this project, I will be talking about a Machine Learning Model called Support Vector Machine (SVM). It is a very powerful and versatile supervised Machine Learning model, superivsed meaning sample data should be labeled. Algorithm works perfectly for almost any supervised problem and it can be used for **classification** or **regression problems**. There is a slight difference in the implementation of these algorithms, *Support Vector Classifier* and *Support Vector Regressor*.
 
