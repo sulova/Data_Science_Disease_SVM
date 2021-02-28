@@ -1,4 +1,4 @@
-# Data Science - Support Vector Machine (SVM) Multiclass Classification in Python**
+# Data Science - Support Vector Machine (SVM) Multiclass Classification
 
 
 
