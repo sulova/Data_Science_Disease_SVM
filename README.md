@@ -12,6 +12,7 @@ SVM is well suited for classification of complex but small or medium sized datas
 - **The One-to-One approach** - separate between a class and all others at once, meaning the separation takes all points into account, dividing them into two groups; a group for the class points and a group for all other points. Thus, the green line tries to maximize the separation between green points and all other points at once.
 
 *Example of 3 classes classification*
+<img src="https://github.com/sulova/Data_Science_Disease_SVM/blob/main/SVM.PNG" width="48">
 ![Image](https://github.com/sulova/Data_Science_Disease_SVM/blob/main/SVM.PNG {width=40px height=400px})
 
 
