@@ -37,7 +37,8 @@ Versatile: different Kernel functions can be specified for the decision function
 
 # Data Wrangling 
 Data manipulation is Another way to refer to this process is data manipulation but there is no set list or order of operations. However, there are three common tasks involved in the data wrangling process such as:
-- **Data cleaning**: Renaming, Sorting and reordering, Data type conversions,Deduplicating data, Addressing missing or invalid data, Filtering to the desired subset of data
+- **Data cleaning**:
+  -  Renaming, Sorting and reordering, Data type conversions,Deduplicating data, Addressing missing or invalid data, Filtering to the desired subset of data
 - **Data transformation**
 - **Data enrichment**
 
