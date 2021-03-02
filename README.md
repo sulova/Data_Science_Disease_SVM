@@ -42,6 +42,17 @@ Data manipulation is another way to refer to this process is data manipulation b
 - **Data transformation**
 - **Data enrichment**
 
+ Useful techniques used to clean and process the data is with Pandas library. Let's explore data and its types. 
+
+```python 
+import pandas as pd
+df = pd.read_csv('/disease.data')
+df.head()
+
+df.dtypes
+# describe() gives the insights about the data and some useful statistics about the data such as mean, min and max etc.
+df.describe()
+```
 A good data wrangler knows how to integrate information from multiple data sources, solving common transformation problems, and resolve data cleansing and quality issues.
 
 # Exploratory Data Analysis
@@ -56,5 +67,5 @@ import seaborn as sns
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-df=pd.read_csv('/disease.data')
+
 ```
