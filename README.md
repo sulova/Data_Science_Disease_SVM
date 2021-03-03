@@ -22,7 +22,7 @@ SVM is well suited for classification of complex but small or medium sized datas
 **The advantages of SVM**
  - Effective in high dimensional spaces
  - Effective in cases where number of dimensions is greater than the number of samples
- - memory efficient as it uses a subset of training points in the decision function (called support vectors)
+ - Memory efficient as it uses a subset of training points in the decision function (called support vectors)
  
 Versatile: different Kernel functions can be specified for the decision function. Common kernels are provided, but it is also possible to specify custom kernels.
 
@@ -33,7 +33,7 @@ Versatile: different Kernel functions can be specified for the decision function
 
 # Data Wrangling 
 Data manipulation is another way to refer to this process is data manipulation but there is no set list or order of operations. However, there are three common tasks involved in the data wrangling process such as:
-  - **Data cleaning**:
+  - **Data cleaning**
   - **Data transformation**
   - **Data enrichment**
 
@@ -52,7 +52,7 @@ df.iloc[:,:10].head()
 
 # shows the data type for each column, among other things
 df.info()
-
+# shows the data type for each column
 df.dtypes
 # describe() gives the insights about the data and some useful statistics about the data such as mean, min and max etc.
 df.describe()
@@ -77,6 +77,21 @@ df['Age']=df['Age'].fillna(age_mean_value)
 #Remove 'Age' column
 df.drop("Age",axis=1,inplace=True)
 ```
+
+It is a good idea to identify duplicate rows and columns with no variation in this step
+
+```python
+# will list down all the duplicated rows in the dataframe.
+df[df.duplicated()]
+# remove those rows 
+df.drop_duplicates(inplace=False) 
+
+#to get rid of all non-unique columns in a dataset. 
+nunique = df.apply(pd.Series.nunique)
+cols_to_drop = nunique[nunique == 1].index
+df.drop(cols_to_drop, axis=1,inplace=True)
+```
+
 *Filtering Data*
 The following piece of code filters the entire dataset for age greater than 50.
 
