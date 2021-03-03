@@ -41,7 +41,7 @@ Data manipulation is another way to refer to this process is data manipulation b
 Useful techniques used to clean and process the data is with **Pandas library**. Pandas is a powerful toolkit for analyzing initial data and introducing dataset structures in Python. Activating Pandas is very easy in python. As one library to do the initial process of data analysis. 
 Let's explore data and its types.
 
-- 1) The overview of the dataset
+- **The overview of the dataset**
 
 ```python 
 import pandas as pd
@@ -60,7 +60,7 @@ df.dtypes
 # describe() gives the insights about the data and some useful statistics about the data such as mean, min and max etc.
 df.describe()
 ```
-- 2) missing and duplicate value
+- **Missing and duplicate value**
 The dataset may consist of a lot of missing and duplicate values, so let's deal with them before applying any machine learning algorithms on them. 
 
 If you have identified the missing values in the dataset, now you have a couple of options to deal with them
