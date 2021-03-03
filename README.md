@@ -46,17 +46,22 @@ Let's explore data and its types.
 ```python 
 import pandas as pd
 df = pd.read_csv('/disease.data')
+
 # to look at a small sample of the dataset at the top
 df.head()
+
 # to look at a small sample of the dataset at the end
 df.tail()
-# have a look at a subset of the rows or columns fx: select the first 10 columns.
+
+# have a look at a subset of the rows or columns fx: select the first 10 columns
 df.iloc[:,:10].head()
 
 # shows the data type for each column, among other things
 df.info()
+
 # shows the data type for each column
 df.dtypes
+
 # describe() gives the insights about the data and some useful statistics about the data such as mean, min and max etc.
 df.describe()
 ```
@@ -75,12 +80,12 @@ df['Age']=df['Age'].fillna(age_mean_value)
 #Remove 'Age' column
 df.drop("Age",axis=1,inplace=True)
 
-# will list down all the duplicated rows in the dataframe.
+# will list down all the duplicated rows in the dataframe
 df[df.duplicated()]
 # remove those rows 
 df.drop_duplicates(inplace=False) 
 
-#to get rid of all non-unique columns in a dataset. 
+#to get rid of all non-unique columns in a dataset
 nunique = df.apply(pd.Series.nunique)
 cols_to_drop = nunique[nunique == 1].index
 df.drop(cols_to_drop, axis=1,inplace=True)
