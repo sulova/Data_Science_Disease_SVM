@@ -42,7 +42,7 @@ Data manipulation is another way to refer to this process is data manipulation b
 - **Data transformation**
 - **Data enrichment**
 
- Useful techniques used to clean and process the data is with Pandas library. Let's explore data and its types. 
+Useful techniques used to clean and process the data is with **Pandas library**. Pandas is a powerful toolkit for analyzing initial data and introducing dataset structures in Python. Activating Pandas is very easy in python.Let's explore data and its types. 
 
 ```python 
 import pandas as pd
@@ -52,6 +52,33 @@ df.head()
 df.dtypes
 # describe() gives the insights about the data and some useful statistics about the data such as mean, min and max etc.
 df.describe()
+```
+
+The dataset may consist of a lot of missing and duplicate values, so let's deal with them before applying any machine learning algorithms on them. 
+
+```python
+# dealing with missing values
+df.isna().sum()
+```
+
+If you have identified the missing values in the dataset, now you have a couple of options to deal with them
+  - either we can drop those rows which consist missing values
+  - calculate the mean, min, max and median etc.
+  
+```python
+# fill in the missing values in 'Age' column
+age_mean_value=df['Age'].mean()
+df['Age']=df['Age'].fillna(age_mean_value)
+
+Remove 'Age' column
+df.drop("Age",axis=1,inplace=True)
+```
+*Filtering Data*
+The following piece of code filters the entire dataset for age greater than 50.
+
+```python
+filtered_age = df[df.Age>40]
+filtered_age
 ```
 A good data wrangler knows how to integrate information from multiple data sources, solving common transformation problems, and resolve data cleansing and quality issues.
 
