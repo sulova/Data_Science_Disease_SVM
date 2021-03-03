@@ -62,9 +62,7 @@ df.describe()
 ```
 - **Missing and duplicate value**
 
-The dataset may consist of a lot of missing and duplicate values, so let's deal with them before applying any machine learning algorithms on them. If you have identified the missing values in the dataset, now you have a couple of options to deal with them:
-  - either we can drop those rows which consist missing values
-  - calculate the mean, min, max and median etc.
+The dataset may consist of a lot of missing and duplicate values, so let's deal with them before applying any machine learning algorithms on them. If you have identified the missing values in the dataset, now you have a couple of options to deal with them, either we can drop those rows which consist missing values or calculate the mean, min, max and median etc.
   
 ```python
 # dealing with missing values
