@@ -1,7 +1,5 @@
 # Data Science - Support Vector Machine (SVM) Multiclass Classification
 
-
-
 In this project, I will be talking about a Machine Learning Model called Support Vector Machine (SVM). It is a very powerful and versatile supervised Machine Learning model, superivsed meaning sample data should be labeled. Algorithm works perfectly for almost any supervised problem and it can be used for **classification** or **regression problems**. There is a slight difference in the implementation of these algorithms, *Support Vector Classifier* and *Support Vector Regressor*.
 
 # Support Vector Machine (SVM)
@@ -21,7 +19,6 @@ SVM is well suited for classification of complex but small or medium sized datas
 </p>
 
 
-
 **The advantages of SVM**
  - Effective in high dimensional spaces
  - Effective in cases where number of dimensions is greater than the number of samples
@@ -34,20 +31,27 @@ Versatile: different Kernel functions can be specified for the decision function
  - Do not directly provide probability estimates, these are calculated using an expensive five-fold cross-validation
  - Do not give the best performance for handling text structures as compared to other algorithms that are used in handling text data. 
 
-
 # Data Wrangling 
 Data manipulation is another way to refer to this process is data manipulation but there is no set list or order of operations. However, there are three common tasks involved in the data wrangling process such as:
-- **Data cleaning**:
-  -  Renaming, Sorting and reordering, Data type conversions, Deduplicating data, Addressing missing or invalid data, Filtering to the desired subset of data
-- **Data transformation**
-- **Data enrichment**
+  - **Data cleaning**:
+  - **Data transformation**
+  - **Data enrichment**
 
-Useful techniques used to clean and process the data is with **Pandas library**. Pandas is a powerful toolkit for analyzing initial data and introducing dataset structures in Python. Activating Pandas is very easy in python.Let's explore data and its types. 
+Useful techniques used to clean and process the data is with **Pandas library**. Pandas is a powerful toolkit for analyzing initial data and introducing dataset structures in Python. Activating Pandas is very easy in python. As one library to do the initial process of data analysis. 
+Let's explore data and its types.
 
 ```python 
 import pandas as pd
 df = pd.read_csv('/disease.data')
+# to look at a small sample of the dataset at the top
 df.head()
+# to look at a small sample of the dataset at the end
+df.tail()
+# have a look at a subset of the rows or columns fx: select the first 10 columns.
+df.iloc[:,:10].head()
+
+# shows the data type for each column, among other things
+df.info()
 
 df.dtypes
 # describe() gives the insights about the data and some useful statistics about the data such as mean, min and max etc.
@@ -70,7 +74,7 @@ If you have identified the missing values in the dataset, now you have a couple 
 age_mean_value=df['Age'].mean()
 df['Age']=df['Age'].fillna(age_mean_value)
 
-Remove 'Age' column
+#Remove 'Age' column
 df.drop("Age",axis=1,inplace=True)
 ```
 *Filtering Data*
