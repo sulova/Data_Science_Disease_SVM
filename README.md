@@ -61,6 +61,7 @@ df.dtypes
 df.describe()
 ```
 - **Missing and duplicate value**
+
 The dataset may consist of a lot of missing and duplicate values, so let's deal with them before applying any machine learning algorithms on them. 
 
 If you have identified the missing values in the dataset, now you have a couple of options to deal with them
