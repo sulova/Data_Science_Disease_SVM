@@ -86,7 +86,7 @@ cols_to_drop = nunique[nunique == 1].index
 df.drop(cols_to_drop, axis=1,inplace=True)
 ```
 
-*Filtering Data*
+- **Filtering Data**
 The following piece of code filters the entire dataset for age greater than 50.
 
 ```python
