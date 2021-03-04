@@ -13,7 +13,6 @@ SVM is well suited for classification of complex but small or medium sized datas
   Example of 3 classes classification
 </div>
 
-
 <p align="center">
   <img width="600" height="300" src="https://github.com/sulova/Data_Science_Disease_SVM/blob/main/SVM.PNG ">
 </p>
@@ -60,7 +59,7 @@ df.iloc[:,:10].head()
 df.info()
 
 # shows the data type for each column
-df.dtypes
+df.dtypes()
 
 # describe() gives the insights about the data and some useful statistics about the data such as mean, min and max etc.
 df.describe()
@@ -73,23 +72,59 @@ The dataset may consist of a lot of missing and duplicate values, so let's deal 
 # dealing with missing values
 df.isna().sum()
 
-# fill in the missing values in 'Age' column
-age_mean_value=df['Age'].mean()
-df['Age']=df['Age'].fillna(age_mean_value)
+# Visualize the missing values using Missingno library. 
+msno.matrix(df)
+```
+<div align="center">
+ Visualize the missing values
+</div>
 
-#Remove 'Age' column
-df.drop("Age",axis=1,inplace=True)
+<p align="center">
+  <img width="600" height="300" src="https://github.com/sulova/Data_Science_Disease_SVM/blob/main/SVM.PNG ">
+</p>
+```python
 
-# will list down all the duplicated rows in the dataframe
+# fill in the missing values in 'ColumnName'
+ColumnName_mean_value=df['ColumnName'].mean()
+df['ColumnName']=df['ColumnName'].fillna(ColumnName_mean_value)
+
+# Remove 'ColumnName' column
+df.drop("ColumnName",axis=1,inplace=True)
+# Drops all columns in the DataFrame that have more than 10% Null values.
+df.dropna(1,thresh=len(df.index)*0.9,inplace=True)
+
+# List down all the duplicated rows in the dataframe
 df[df.duplicated()]
-# remove those rows 
+# Remove those rows 
 df.drop_duplicates(inplace=False) 
 
-#to get rid of all non-unique columns in a dataset
+# Get rid of all non-unique columns in a dataset
 nunique = df.apply(pd.Series.nunique)
 cols_to_drop = nunique[nunique == 1].index
 df.drop(cols_to_drop, axis=1,inplace=True)
+
+# Check if any existing column has all null values
+df.isnull().values.all(axis=0)
+# Replace all the null values in the column with a zero.
+df['ColumnName'].fillna(0, inplace = True)
+
+# 'ColumName' should ranges from 0–3, however, is listed 0–4
+df.nunique()
+
 ```
+
+- **Correct Data type for a column **
+
+```python
+# Conversion between data types for a column. 
+ df['ColumnName'].astype()
+ 
+# Binary columns to 0s and 1s for Yes/NO 
+df['ColumnName'] = df['ColumnName'].map({'YES': 1, 'NO': 0})
+df['ColumnName'] = df['ColumnName'].astype('int8')
+``` 
+
+
 
 - **Filtering Data**
 The following piece of code filters the entire dataset for age greater than 50.
