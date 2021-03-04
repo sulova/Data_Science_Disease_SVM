@@ -75,13 +75,15 @@ df.isna().sum()
 # Visualize the missing values using Missingno library. 
 msno.matrix(df)
 ```
+
 <div align="center">
  Visualize the missing values
 </div>
 
 <p align="center">
-  <img width="600" height="300" src="https://github.com/sulova/Data_Science_Disease_SVM/blob/main/SVM.PNG ">
+  <img width="600" height="300" src="https://github.com/sulova/Data_Science_Disease_SVM/blob/main/Sk%C3%A6rmbillede%202021-03-04%20212910.png ">
 </p>
+
 ```python
 
 # fill in the missing values in 'ColumnName'
