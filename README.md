@@ -119,7 +119,7 @@ df.dropna(how='all')
 df.dropna(thresh=2)
 ```
 
-- **Correct Data type for a column **
+- **Correct Data type for a column**
 
 ```python
 # Conversion between data types for a column. 
