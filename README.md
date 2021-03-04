@@ -81,7 +81,7 @@ msno.matrix(df)
 </div>
 
 <p align="center">
-  <img width="600" height="300" src="https://github.com/sulova/Data_Science_Disease_SVM/blob/main/Sk%C3%A6rmbillede%202021-03-04%20212910.png ">
+  <img width="400" height="200" src="https://github.com/sulova/Data_Science_Disease_SVM/blob/main/Sk%C3%A6rmbillede%202021-03-04%20212910.png ">
 </p>
 
 ```python
