@@ -17,7 +17,6 @@ SVM is well suited for classification of complex but small or medium sized datas
   <img width="600" height="300" src="https://github.com/sulova/Data_Science_Disease_SVM/blob/main/SVM.PNG ">
 </p>
 
-
 **The advantages of SVM**
  - Effective in high dimensional spaces
  - Effective in cases where number of dimensions is greater than the number of samples
@@ -87,12 +86,14 @@ msno.matrix(df)
 ```python
 
 # fill in the missing values in 'ColumnName'
-ColumnName_mean_value=df['ColumnName'].mean()
-df['ColumnName']=df['ColumnName'].fillna(ColumnName_mean_value)
+ColumnName_mean_value = df['ColumnName'].mean()
+df['ColumnName'] = df['ColumnName'].fillna(ColumnName_mean_value)
+
+Replace the NaN with median.
 
 # Remove 'ColumnName' column
-df.drop("ColumnName",axis=1,inplace=True)
-# Drops all columns in the DataFrame that have more than 10% Null values.
+df.drop("ColumnName",axis = 1,inplace=True)
+# Drops all columns in the DataFrame that have more than 10% Null values
 df.dropna(1,thresh=len(df.index)*0.9,inplace=True)
 
 # List down all the duplicated rows in the dataframe
@@ -107,12 +108,15 @@ df.drop(cols_to_drop, axis=1,inplace=True)
 
 # Check if any existing column has all null values
 df.isnull().values.all(axis=0)
-# Replace all the null values in the column with a zero.
+# Replace all the null values in the column with a zero
 df['ColumnName'].fillna(0, inplace = True)
 
-# 'ColumName' should ranges from 0–3, however, is listed 0–4
-df.nunique()
-
+# Define in which columns to look for missing values
+df.dropna(subset=['ColumnName_1', 'ColumnName_1'])
+# Drop the rows where all elements are missing
+df.dropna(how='all')
+# Keep only the rows with at least 2 non-NA values
+df.dropna(thresh=2)
 ```
 
 - **Correct Data type for a column **
@@ -120,21 +124,30 @@ df.nunique()
 ```python
 # Conversion between data types for a column. 
  df['ColumnName'].astype()
- 
-# Binary columns to 0s and 1s for Yes/NO 
-df['ColumnName'] = df['ColumnName'].map({'YES': 1, 'NO': 0})
-df['ColumnName'] = df['ColumnName'].astype('int8')
+
+# Change the labeling for better visualization and interpretation.**
+df['target'] = df.target.replace({1: "Disease", 0: "No_disease"})
+df['sex'] = df.sex.replace({1: "Male", 0: "Female"})
+
 ``` 
 
-
-
 - **Filtering Data**
-The following piece of code filters the entire dataset for age greater than 50.
 
-```python
+ ```python
+# The value of the Country column is not USA
+df[df[‘Country’]!=’USA’]
+
+# The following piece of code filters the entire dataset for age greater than 40
 filtered_age = df[df.Age>40]
 filtered_age
-```
+
+# Grouping/Aggregating the values of the Customer column based on the Country column
+df.groupby([‘Country’]).CustomerNo.count()
+
+#  Merging the Customer with the Location DataFrame using a left join
+pd.merge(customer,location,how=’left’,on=[‘city’])
+
+``` 
 A good data wrangler knows how to integrate information from multiple data sources, solving common transformation problems, and resolve data cleansing and quality issues.
 
 # Exploratory Data Analysis
