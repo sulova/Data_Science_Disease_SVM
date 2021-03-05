@@ -43,6 +43,8 @@ Let's explore data and its types.
 
 ```python 
 import pandas as pd
+import seaborn as sns
+
 df = pd.read_csv('/disease.data')
 
 # to look at a small sample of the dataset at the top
@@ -151,6 +153,7 @@ pd.merge(customer,location,how=’left’,on=[‘city’])
 A good data wrangler knows how to integrate information from multiple data sources, solving common transformation problems, and resolve data cleansing and quality issues.
 
 # Exploratory Data Analysis
+Exploratory Data Analysis (EDA) is a pre-processing step to understand the data. There are numerous methods and steps in performing EDA, however, most of them are specific, focusing on either visualization or distribution, and are incomplete.
 Now we will make necessary imports and try to load the dataset to jupyter notebook.
 
 ```python
@@ -163,4 +166,11 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
+print(df['SalePrice'].describe())
+plt.figure(figsize=(9, 8))
+sns.distplot(df['SalePrice'], color='g', bins=100, hist_kws={'alpha': 0.4});
+
 ```
+
+
+Now lets take a look at how the housing price is distributed
