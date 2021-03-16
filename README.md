@@ -82,13 +82,18 @@ plt.show()
 ```
 Seperating Predictors and Outcome values from train and test sets
 ```python
-X_train = pd.DataFrame(train.drop(['Activity','subject'],axis=1))
-Y_train_label = train.Activity.values.astype(object)
-X_test = pd.DataFrame(test.drop(['Activity','subject'],axis=1))
-Y_test_label = test.Activity.values.astype(object)
-
-# Dimension of Train and Test set 
-print("Dimension of Train set",X_train.shape)
-print("Dimension of Test set",X_test.shape,"\n")
+X_train = pd.DataFrame(train.drop(['Class_column','subject'],axis=1))
+Y_train_label = train.Class_column.values.astype(object)
+X_test = pd.DataFrame(test.drop(['Class_column','subject'],axis=1))
+Y_test_label = test.Class_column.values.astype(object)
 ```
-
+Dimension of Train and Test set 
+```python
+print("Dimension of Train dataset",X_train.shape)
+print("Dimension of Test dataset",X_test.shape,"\n")
+```
+Transforming non numerical labels into numerical labels
+```python
+from sklearn import preprocessing
+encoder = preprocessing.LabelEncoder()
+```
