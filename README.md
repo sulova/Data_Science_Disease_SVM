@@ -29,3 +29,34 @@ Versatile: different Kernel functions can be specified for the decision function
  - Do not directly provide probability estimates, these are calculated using an expensive five-fold cross-validation
  - Do not give the best performance for handling text structures as compared to other algorithms that are used in handling text data. 
 
+Training Support Vector Machines for Multiclass Classification
+
+```python
+import numpy as np
+import pylab as pl
+import pandas as pd
+import matplotlib.pyplot as plt 
+%matplotlib inline
+import seaborn as sns
+from sklearn.utils import shuffle
+from sklearn.svm import SVC
+from sklearn.metrics import confusion_matrix,classification_report
+from sklearn.model_selection import cross_val_score, GridSearchCV
+# Input data files are available in the "../input/" directory.
+# For example, running this (by clicking run or pressing Shift+Enter) will list the files in the input directory
+```
+
+Any results you write to the current directory are saved as output.
+
+```python
+import os
+print(os.listdir("../input"))
+```
+
+Loading both test and train set.
+
+```python
+train = shuffle(pd.read_csv("../input/train.csv"))
+test = shuffle(pd.read_csv("../input/test.csv"))
+```
+
