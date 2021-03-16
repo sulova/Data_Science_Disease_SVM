@@ -60,3 +60,8 @@ train = shuffle(pd.read_csv("../input/train.csv"))
 test = shuffle(pd.read_csv("../input/test.csv"))
 ```
 
+Check for missing values in the dataset
+```python
+print("Any missing sample in training set:",train.isnull().values.any())
+print("Any missing sample in test set:",test.isnull().values.any(), "\n")
+```
