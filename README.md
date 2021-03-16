@@ -65,3 +65,30 @@ Check for missing values in the dataset
 print("Any missing sample in training set:",train.isnull().values.any())
 print("Any missing sample in test set:",test.isnull().values.any(), "\n")
 ```
+Visualizing Outcome Distribution
+```python
+temp = train["Class_column"].value_counts()
+df = pd.DataFrame({'labels': temp.index,
+                   'values': temp.values
+                  })
+labels = df['labels']
+sizes = df['values']
+colors = ['yellowgreen', 'gold', 'lightskyblue', 'lightcoral','cyan','lightpink']
+patches, texts = plt.pie(sizes, colors=colors, shadow=True, startangle=90, pctdistance=1.1, labeldistance=1.2)
+plt.legend(patches, labels, loc="best")
+plt.axis('equal')
+plt.tight_layout()
+plt.show()
+```
+Seperating Predictors and Outcome values from train and test sets
+```python
+X_train = pd.DataFrame(train.drop(['Activity','subject'],axis=1))
+Y_train_label = train.Activity.values.astype(object)
+X_test = pd.DataFrame(test.drop(['Activity','subject'],axis=1))
+Y_test_label = test.Activity.values.astype(object)
+
+# Dimension of Train and Test set 
+print("Dimension of Train set",X_train.shape)
+print("Dimension of Test set",X_test.shape,"\n")
+```
+
